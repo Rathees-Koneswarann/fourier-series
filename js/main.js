@@ -27,7 +27,9 @@ function draw() {
     let y = radius * sin(time); // get the y coordinate in circle now
 
     fill(255);
-    ellipse(x, y, 8);
+    ellipse(x, y, 8); // small circle at big circle circumference
+
+    line (0, 0, x, y); // line start from big circle's centre and end in small circles center
     
 
     
