@@ -4,6 +4,7 @@
 // https://youtu.be/Mm2eYfj0SgA
 
 let time = 0;
+let wave = []; // y coordinates of wave
 
 
 function setup() {
@@ -26,13 +27,21 @@ function draw() {
     let x = radius * cos(time); // get the x coordinates in circle now
     let y = radius * sin(time); // get the y coordinate in circle now
 
+    wave.push(y); // collect y coordinates
+
     fill(255);
     ellipse(x, y, 8); // small circle at big circle circumference
 
     line (0, 0, x, y); // line start from big circle's centre and end in small circles center
     
-
+    translate(180,0); // move point
+    beginShape();
+    noFill();
+    for (let i = 0; i < wave.length; i++) {
+        vertex(i, wave[i]); // draw curve
+    }
+    endShape();
     
-    time += 0.01; // increase the time
+    time += 0.1; // increase the time
 
 }
