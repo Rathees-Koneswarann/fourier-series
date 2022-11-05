@@ -1,20 +1,24 @@
-function draw(){
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+// Fourier Series
+// Daniel Shiffman
+// https://thecodingtrain.com/CodingChallenges/125-fourier-series.html
+// https://youtu.be/Mm2eYfj0SgA
+
+let time = 0;
+
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+    background(0);
+    translate(200,200);
+    let radius = 50;
+
+    stroke(255);
+
+    ellipse(0, 0, radius *2);
     
-    ctx.fillStyle = 'red';
-    ctx.beginPath();
-    ctx.ellipse(60, 75, 50, 30, Math.PI * .25, 0, Math.PI * 1.5);
-    ctx.fill();
-    
-    ctx.fillStyle = 'blue';
-    ctx.beginPath();
-    ctx.ellipse(150, 75, 50, 30, Math.PI * .25, 0, Math.PI);
-    ctx.fill();
-    
-    ctx.fillStyle = 'green';
-    ctx.beginPath();
-    ctx.ellipse(240, 75, 50, 30, Math.PI * .25, 0, Math.PI, true);
-    ctx.fill();
-    
+    time += 0.001;
+
 }
