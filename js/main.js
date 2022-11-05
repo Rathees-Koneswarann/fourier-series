@@ -16,6 +16,7 @@ function draw() {
     let radius = 50;
 
     stroke(255);
+    noFill();
 
     ellipse(0, 0, radius *2);
     
