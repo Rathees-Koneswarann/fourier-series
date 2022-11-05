@@ -35,6 +35,7 @@ function draw() {
     line (0, 0, x, y); // line start from big circle's centre and end in small circles center
     
     translate(180,0); // move point
+    line(x-180, y, 0, wave[0])
     beginShape();
     noFill();
     for (let i = 0; i < wave.length; i++) {
@@ -42,6 +43,6 @@ function draw() {
     }
     endShape();
     
-    time += 0.1; // increase the time
+    time += 0.05; // increase the time
 
 }
