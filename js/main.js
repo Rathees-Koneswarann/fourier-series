@@ -1,16 +1,20 @@
-function draw()
-  {
-var canvas = document.getElementById('circle');
-if (canvas.getContext)
-{
-var ctx = canvas.getContext('2d'); 
-var X = canvas.width / 2;
-var Y = canvas.height / 2;
-var R = 45;
-ctx.beginPath();
-ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
-ctx.lineWidth = 3;
-ctx.strokeStyle = '#FF0000';
-ctx.stroke();
-}
+function draw(){
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    ctx.fillStyle = 'red';
+    ctx.beginPath();
+    ctx.ellipse(60, 75, 50, 30, Math.PI * .25, 0, Math.PI * 1.5);
+    ctx.fill();
+    
+    ctx.fillStyle = 'blue';
+    ctx.beginPath();
+    ctx.ellipse(150, 75, 50, 30, Math.PI * .25, 0, Math.PI);
+    ctx.fill();
+    
+    ctx.fillStyle = 'green';
+    ctx.beginPath();
+    ctx.ellipse(240, 75, 50, 30, Math.PI * .25, 0, Math.PI, true);
+    ctx.fill();
+    
 }
